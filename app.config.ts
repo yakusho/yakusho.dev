@@ -9,8 +9,9 @@ export default defineConfig({
   extensions: ["mdx", "md"],
   server: {
     prerender: {
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
+    preset: "cloudflare-pages-static",
   },
   vite: {
     plugins: [
@@ -21,6 +22,6 @@ export default defineConfig({
         remarkPlugins: [remarkFrontmatter],
       }),
       parseBlogPosts(),
-    ]
-  }
+    ],
+  },
 });
